@@ -1,4 +1,5 @@
 # clash of letters
+research nlng din kyo or sa YT about github or kung paano ito mapapakinabangan nang tama. 
 
 "assets" folder contains unsused assets (resources, character, bg, etc) (gawin nlng nating imbakan tong folder ng mga "unused and used" assets na nadownload ntin sa internet for future use purposes)
  
