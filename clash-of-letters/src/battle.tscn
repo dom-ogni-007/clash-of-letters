@@ -1,0 +1,355 @@
+[gd_scene load_steps=8 format=3 uid="uid://cc1rt6yp64bno"]
+
+[ext_resource type="Texture2D" uid="uid://dpg76hluoabxs" path="res://assets/bg/battleback1.png" id="1_hvytj"]
+[ext_resource type="Texture2D" uid="uid://b8qgme07ik8r7" path="res://assets/enemy/06b.png" id="2_5565a"]
+[ext_resource type="Texture2D" uid="uid://bqqqs4hpapo2c" path="res://assets/enemy/09b.png" id="2_fo1yv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvyyc"]
+bg_color = Color(1, 0, 0.283333, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6u2o"]
+bg_color = Color(0, 0.87, 0.0724999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7tf0v"]
+bg_color = Color(0.08, 0.08, 0.08, 0.843137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l217n"]
+bg_color = Color(0.5, 0.15, 0.15, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.98, 0.98, 0.98, 1)
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_hvytj")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.083
+anchor_right = 0.5
+anchor_bottom = 0.083
+offset_left = -198.0
+offset_top = -37.784
+offset_right = -69.0
+offset_bottom = -14.784
+grow_horizontal = 2
+scale = Vector2(2.90829, 3.29797)
+text = "stage level
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="EnemyContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.643
+anchor_top = 0.379
+anchor_right = 0.643
+anchor_bottom = 0.379
+offset_left = 62.264
+offset_top = -123.592
+offset_right = 191.264
+offset_bottom = 33.408
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.48, 1.6)
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="EnemyContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_xvyyc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n6u2o")
+step = 1.0
+value = 70.0
+show_percentage = false
+
+[node name="Label3" type="Label" parent="EnemyContainer/ProgressBar"]
+layout_mode = 2
+offset_top = -27.0
+offset_right = 129.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "enemy Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="EnemyContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP: 70 / 100
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Enemy" type="TextureRect" parent="EnemyContainer"]
+layout_mode = 2
+texture = ExtResource("2_5565a")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="EnemyContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.643
+anchor_top = 0.379
+anchor_right = 0.643
+anchor_bottom = 0.379
+offset_left = -654.736
+offset_top = -122.592
+offset_right = -525.736
+offset_bottom = 34.408
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.67306, 1.85357)
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="EnemyContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_xvyyc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_n6u2o")
+step = 1.0
+value = 70.0
+show_percentage = false
+
+[node name="Label2" type="Label" parent="EnemyContainer2/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.3564
+offset_bottom = -25.3564
+grow_horizontal = 2
+grow_vertical = 2
+text = "player Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label" type="Label" parent="EnemyContainer2/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "HP: 70 / 100
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Enemy" type="TextureRect" parent="EnemyContainer2"]
+layout_mode = 2
+texture = ExtResource("2_fo1yv")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="ActionsPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 326.0
+offset_top = -99.0
+offset_right = -254.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.800001, 0.679999)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7tf0v")
+
+[node name="Actions" type="HBoxContainer" parent="ActionsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "I"
+
+[node name="Button2" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "E"
+
+[node name="Button3" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "C"
+
+[node name="Button4" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "T"
+
+[node name="Button5" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "F"
+
+[node name="Button6" type="Button" parent="ActionsPanel/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "D"
+
+[node name="ActionsPanel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 326.0
+offset_top = -184.0
+offset_right = -254.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.800001, 0.679999)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7tf0v")
+
+[node name="Actions" type="HBoxContainer" parent="ActionsPanel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="ActionsPanel2/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "J
+"
+
+[node name="Button2" type="Button" parent="ActionsPanel2/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = " "
+
+[node name="Button3" type="Button" parent="ActionsPanel2/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "W"
+
+[node name="Button4" type="Button" parent="ActionsPanel2/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = " "
+
+[node name="Button5" type="Button" parent="ActionsPanel2/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = " "
+
+[node name="Button6" type="Button" parent="ActionsPanel2/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "E"
+
+[node name="ActionsPanel3" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 326.0
+offset_top = -317.0
+offset_right = -254.0
+offset_bottom = -226.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.800001, 0.679999)
+theme_override_styles/panel = SubResource("StyleBoxFlat_7tf0v")
+
+[node name="Actions" type="HBoxContainer" parent="ActionsPanel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button2" type="Button" parent="ActionsPanel3/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "D"
+
+[node name="Button4" type="Button" parent="ActionsPanel3/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "A"
+
+[node name="Button5" type="Button" parent="ActionsPanel3/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_l217n")
+text = "D"
