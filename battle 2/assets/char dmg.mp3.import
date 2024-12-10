@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlpq6xyj4wnna"
+path="res://.godot/imported/char dmg.mp3-cd8eb233381223f5be70e159abd62a53.mp3str"
+
+[deps]
+
+source_file="res://assets/char dmg.mp3"
+dest_files=["res://.godot/imported/char dmg.mp3-cd8eb233381223f5be70e159abd62a53.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

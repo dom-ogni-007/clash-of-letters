@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4d3g6va8mwec"
+path="res://.godot/imported/CLR BACK.ogg-ca97413f0bf844f57b53d886f39b04c7.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/CLR BACK.ogg"
+dest_files=["res://.godot/imported/CLR BACK.ogg-ca97413f0bf844f57b53d886f39b04c7.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

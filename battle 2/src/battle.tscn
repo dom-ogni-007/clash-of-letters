@@ -1,0 +1,381 @@
+[gd_scene load_steps=17 format=3 uid="uid://cc1rt6yp64bno"]
+
+[ext_resource type="Script" path="res://src/battle.gd" id="1_ics3w"]
+[ext_resource type="Texture2D" uid="uid://cdp5uk03houx3" path="res://assets/bg/battleback10.png" id="2_bmqnt"]
+[ext_resource type="Texture2D" uid="uid://bqqqs4hpapo2c" path="res://assets/enemy/09b.png" id="2_fo1yv"]
+[ext_resource type="Theme" uid="uid://blppf1yat6fpe" path="res://assets/theme1.tres" id="3_4308d"]
+[ext_resource type="Theme" uid="uid://dupr8120eui5t" path="res://assets/btntheme.tres" id="3_uvu1k"]
+[ext_resource type="Texture2D" uid="uid://c078pb2ml0cud" path="res://assets/enemy/04b.png" id="6_2i7sw"]
+[ext_resource type="FontFile" uid="uid://bgm85qxga55nj" path="res://assets/Supply Center.ttf" id="7_slkcn"]
+[ext_resource type="AudioStream" uid="uid://cjvxfudqgh47f" path="res://assets/UI CLICK.ogg" id="7_uma8j"]
+[ext_resource type="AudioStream" uid="uid://dyv32rawe34cy" path="res://assets/UI HOVER.ogg" id="8_81mf8"]
+[ext_resource type="AudioStream" uid="uid://c4d3g6va8mwec" path="res://assets/CLR BACK.ogg" id="9_qfj4f"]
+[ext_resource type="AudioStream" uid="uid://dlpq6xyj4wnna" path="res://assets/char dmg.mp3" id="10_xjp8c"]
+[ext_resource type="AudioStream" uid="uid://cw8it486h6jfw" path="res://assets/enemy dmg.ogg" id="11_wqyyo"]
+[ext_resource type="Texture2D" uid="uid://wojsb7krk4vo" path="res://assets/Board.png" id="13_aelop"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxv8m"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jmwd"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="Theme" id="Theme_67uhh"]
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 16
+ProgressBar/fonts/font = ExtResource("7_slkcn")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_kxv8m")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_0jmwd")
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ics3w")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1149.0
+offset_bottom = 644.0
+texture = ExtResource("2_bmqnt")
+metadata/_edit_lock_ = true
+
+[node name="STAGELVL" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.083
+anchor_right = 0.5
+anchor_bottom = 0.083
+offset_left = -181.0
+offset_top = -18.784
+offset_right = -60.0
+offset_bottom = 4.216
+grow_horizontal = 2
+scale = Vector2(2.90829, 3.29797)
+text = "LEVEL 999
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_lock_ = true
+
+[node name="ButtonD" type="Button" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 456.0
+offset_right = 432.0
+offset_bottom = 520.0
+theme = ExtResource("3_uvu1k")
+text = "D
+"
+
+[node name="ButtonZ" type="Button" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 456.0
+offset_right = 544.0
+offset_bottom = 520.0
+theme = ExtResource("3_uvu1k")
+text = "Z"
+
+[node name="ButtonR" type="Button" parent="."]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 536.0
+offset_right = 488.0
+offset_bottom = 600.0
+theme = ExtResource("3_uvu1k")
+text = "R"
+
+[node name="ButtonE" type="Button" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 456.0
+offset_right = 656.0
+offset_bottom = 520.0
+theme = ExtResource("3_uvu1k")
+text = "E"
+
+[node name="ButtonZ2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 536.0
+offset_right = 712.0
+offset_bottom = 600.0
+theme = ExtResource("3_uvu1k")
+text = "Z"
+
+[node name="ButtonI" type="Button" parent="."]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 456.0
+offset_right = 768.0
+offset_bottom = 520.0
+theme = ExtResource("3_uvu1k")
+text = "I
+"
+
+[node name="ButtonL" type="Button" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 536.0
+offset_right = 600.0
+offset_bottom = 600.0
+theme = ExtResource("3_uvu1k")
+text = "L
+"
+
+[node name="ButtonCLR" type="Button" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 408.0
+offset_right = 904.0
+offset_bottom = 472.0
+text = "CLR"
+
+[node name="ButtonATK" type="Button" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 496.0
+offset_right = 904.0
+offset_bottom = 560.0
+text = "ATK"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 368.0
+offset_right = 776.0
+offset_bottom = 428.0
+theme = ExtResource("3_4308d")
+alignment = 1
+editable = false
+
+[node name="PLAYER" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 168.0
+offset_top = 136.0
+offset_right = 384.0
+offset_bottom = 352.0
+texture = ExtResource("2_fo1yv")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="Enemy" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 792.0
+offset_top = 88.0
+offset_right = 984.0
+offset_bottom = 355.0
+texture = ExtResource("6_2i7sw")
+expand_mode = 5
+stretch_mode = 6
+
+[node name="CharHP" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 112.0
+offset_right = 384.0
+offset_bottom = 137.0
+theme = SubResource("Theme_67uhh")
+value = 100.0
+
+[node name="ENEMYHP" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 112.0
+offset_right = 984.0
+offset_bottom = 137.0
+value = 100.0
+
+[node name="CLICK" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_uma8j")
+
+[node name="HOVER" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_81mf8")
+
+[node name="CLRSD" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qfj4f")
+
+[node name="DMGCHAR" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xjp8c")
+
+[node name="DMGENEMY" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_wqyyo")
+
+[node name="ENEMYNAME" type="Label" parent="."]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 72.0
+offset_right = 970.0
+offset_bottom = 110.0
+theme = ExtResource("3_4308d")
+theme_override_font_sizes/font_size = 30
+text = "GROMP"
+
+[node name="CHARNAME" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 72.0
+offset_right = 330.0
+offset_bottom = 110.0
+theme = ExtResource("3_4308d")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "YOU"
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(168, 488)
+scale = Vector2(1.61658, 1.11111)
+texture = ExtResource("13_aelop")
+
+[node name="DELILABEL" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 408.0
+offset_right = 108.0
+offset_bottom = 429.0
+text = "DELI"
+
+[node name="DIRELABEL" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 448.0
+offset_right = 113.0
+offset_bottom = 469.0
+text = "DIRE"
+
+[node name="DRIZZLELABEL" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 488.0
+offset_right = 135.0
+offset_bottom = 509.0
+text = "DRIZZLE"
+
+[node name="IDLELABEL" type="Label" parent="."]
+offset_left = 144.0
+offset_top = 408.0
+offset_right = 188.0
+offset_bottom = 429.0
+text = "IDLE"
+
+[node name="LIEDLABEL" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 408.0
+offset_right = 268.0
+offset_bottom = 429.0
+text = "LIED"
+
+[node name="RIDELABEL" type="Label" parent="."]
+offset_left = 224.0
+offset_top = 448.0
+offset_right = 273.0
+offset_bottom = 469.0
+text = "RIDE"
+
+[node name="RILEDLABEL" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 488.0
+offset_right = 260.0
+offset_bottom = 509.0
+text = "RILED
+"
+
+[node name="RILELABEL" type="Label" parent="."]
+offset_left = 144.0
+offset_top = 448.0
+offset_right = 189.0
+offset_bottom = 469.0
+text = "RILE"
+
+[node name="IDLERLABEL" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 552.0
+offset_right = 124.0
+offset_bottom = 573.0
+text = "IDLER"
+
+[node name="IREDLABEL" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 576.0
+offset_right = 185.0
+offset_bottom = 597.0
+text = "IRED"
+
+[node name="LIERLABEL" type="Label" parent="."]
+offset_left = 200.0
+offset_top = 552.0
+offset_right = 245.0
+offset_bottom = 573.0
+text = "LIER"
+
+[node name="wordsLABEL" type="Label" parent="."]
+offset_left = 112.0
+offset_top = 376.0
+offset_right = 226.0
+offset_bottom = 397.0
+text = "8 WORDS :"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 520.0
+offset_right = 216.0
+offset_bottom = 541.0
+text = "3 BONUS :"
+
+[node name="USEDBOX" type="Popup" parent="."]
+transparent_bg = true
+initial_position = 1
+size = Vector2i(100, 25)
+max_size = Vector2i(300, 25)
+
+[node name="Label" type="Label" parent="USEDBOX"]
+offset_right = 40.0
+offset_bottom = 21.0
+theme = ExtResource("3_4308d")
+theme_override_colors/font_color = Color(0.760784, 0, 0, 1)
+
+[connection signal="mouse_entered" from="ButtonD" to="." method="_on_button_d_mouse_entered"]
+[connection signal="pressed" from="ButtonD" to="." method="_on_button_d_pressed"]
+[connection signal="mouse_entered" from="ButtonZ" to="." method="_on_button_z_mouse_entered"]
+[connection signal="pressed" from="ButtonZ" to="." method="_on_button_z_pressed"]
+[connection signal="mouse_entered" from="ButtonR" to="." method="_on_button_r_mouse_entered"]
+[connection signal="pressed" from="ButtonR" to="." method="_on_button_r_pressed"]
+[connection signal="mouse_entered" from="ButtonE" to="." method="_on_button_e_mouse_entered"]
+[connection signal="pressed" from="ButtonE" to="." method="_on_button_e_pressed"]
+[connection signal="mouse_entered" from="ButtonZ2" to="." method="_on_button_z_2_mouse_entered"]
+[connection signal="pressed" from="ButtonZ2" to="." method="_on_button_z_2_pressed"]
+[connection signal="mouse_entered" from="ButtonI" to="." method="_on_button_i_mouse_entered"]
+[connection signal="pressed" from="ButtonI" to="." method="_on_button_i_pressed"]
+[connection signal="mouse_entered" from="ButtonL" to="." method="_on_button_l_mouse_entered"]
+[connection signal="pressed" from="ButtonL" to="." method="_on_button_l_pressed"]
+[connection signal="mouse_entered" from="ButtonCLR" to="." method="_on_button_clr_mouse_entered"]
+[connection signal="pressed" from="ButtonCLR" to="." method="_on_button_clr_pressed"]
+[connection signal="mouse_entered" from="ButtonATK" to="." method="_on_button_atk_mouse_entered"]
+[connection signal="pressed" from="ButtonATK" to="." method="_on_button_atk_pressed"]
